@@ -219,6 +219,8 @@ class SXSWaveforms:
         for l, m in model_list:
             ylm = lal.SpinWeightedSphericalHarmonic(iota, beta, -2, l, m)
             strain += getattr(self, attr_name)[str(l) + str(m)] * ylm
+            print(getattr(self, attr_name)[str(l) + str(m)])
+            print(111)
         time = getattr(self, attr_name)[str(l) + str(m)].time
         ifo = getattr(self, attr_name)[str(l) + str(m)].ifo
         hp = np.real(strain)
